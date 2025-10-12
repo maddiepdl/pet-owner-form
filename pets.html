@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pet Management</title>
+  <style>
+    form div {
+      margin-bottom: 12px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Pet Management</h1>
+
+  <!-- form to collect pet information -->
+  <form id="petForm">
+    <div>
+      <label for="petName">Pet's Name:</label>
+      <input type="text" id="petName" />
+    </div>
+    <div>
+      <label for="petAge">Age:</label>
+      <input type="number" id="petAge" />
+    </div>
+    <div>
+      <label for="petSpecies">Species:</label>
+      <input type="text" id="petSpecies" />
+    </div>
+
+    <!-- button to create pet -->
+    <button type="button" id="createPetBtn">Create Pet</button>
+  </form>
+
+  <!-- js files in the correct order -->
+  <script src="petCreator.js"></script>
+  <script src="pets.js"></script>
+</body>
+</html>
