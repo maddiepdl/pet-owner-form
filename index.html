@@ -12,7 +12,8 @@
 </head>
 <body>
   <h1>Pet Owner Form</h1>
-  <!-- collects owner information -->
+
+  <!-- form to collect owner information -->
   <form id="petOwnForm">
     <div>
       <label for="ownerName">Owner Name:</label>
@@ -43,10 +44,25 @@
       <label for="petName">Pet's Name:</label>
       <input type="text" id="petName" name="petName" />
     </div>
-    <!-- button with type "button" instead of a submit input -->
+
+    <div>
+      <label for="petType">Pet Type:</label>
+      <input type="text" id="petType" name="petType" />
+    </div>
+  <!-- button with type "button" instead of a submit input -->
     <button type="button" id="saveButton">Save</button>
   </form>
 
+  <!-- display section -->
+  <h2>Owner Information</h2>
+  <div class="output">
+    <div id="ownerNameDisplay"></div>
+    <div id="ownerCityDisplay"></div>
+    <div id="petNameDisplay"></div>
+    <div id="petTypeDisplay"></div>
+  </div>
+
+  <script src="petOwnerFactory.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

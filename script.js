@@ -1,43 +1,40 @@
 console.log("hello world");
 
-// empty object to store form
+// global state object to store form
 const state = {};
-
 console.table(state);
 
-// function and message when "Save" is clicked
+// function when "Save" is clicked
 function saveForm() {
   console.log("button clicked!");
 
-  // get the form values 
+// get the form values
   const ownerName = document.getElementById("ownerName").value;
-  console.log("Owner Name:", ownerName);
-
   const email = document.getElementById("email").value;
-  console.log("Email:", email);
-
   const phone = document.getElementById("phone").value;
-  console.log("Phone:", phone);
-
   const city = document.getElementById("city").value;
-  console.log("City:", city);
-
   const zip = document.getElementById("zip").value;
-  console.log("Zip Code:", zip);
-
   const petName = document.getElementById("petName").value;
-  console.log("Pet's Name:", petName);
+  const petType = document.getElementById("petType").value;
 
-  // store into state object and display
+  // store values in global state
   state.ownerName = ownerName;
   state.email = email;
   state.phone = phone;
   state.city = city;
   state.zip = zip;
   state.petName = petName;
+  state.petType = petType;
 
   console.table(state);
+
+  // pet owner object factory function
+  const petOwner = createPetOwner(state.ownerName, state.city, state.petName, state.petType);
+
+  // render owner information to webpage
+  petOwner.status();
+  petOwner.render();
 }
 
-// click event listener to "Save" button to run saveForm function
+// click event listener to "Save" button
 document.getElementById("saveButton").addEventListener("click", saveForm);
