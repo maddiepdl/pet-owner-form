@@ -1,14 +1,14 @@
 console.log("hello world");
 
 // global state object to store form
-const state = {};
+// now using shared state from state.js
 console.table(state);
 
 // function when "Save" is clicked
 function saveForm() {
   console.log("button clicked!");
 
-// get the form values
+  // get the form values
   const ownerName = document.getElementById("ownerName").value;
   const email = document.getElementById("email").value;
   const phone = document.getElementById("phone").value;
@@ -27,6 +27,11 @@ function saveForm() {
   state.petType = petType;
 
   console.table(state);
+
+  // save form to localStorage
+  localStorage.setItem("name", state.ownerName);
+  localStorage.setItem("email", state.email);
+  localStorage.setItem("zipcode", state.zip);
 
   // pet owner object factory function
   const petOwner = createPetOwner(state.ownerName, state.city, state.petName, state.petType);
