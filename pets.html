@@ -7,12 +7,18 @@
     form div {
       margin-bottom: 12px;
     }
+
+    #petsContainer div {
+      border: 1px solid #0ABAB5; /* Tiffany blue */
+      padding: 10px;
+      margin-bottom: 10px;
+    }
   </style>
 </head>
 <body>
   <h1>Pet Management</h1>
 
-  <!-- form to collect pet information -->
+  <!-- form to collect pet -->
   <form id="petForm">
     <div>
       <label for="petName">Pet's Name:</label>
@@ -26,12 +32,14 @@
       <label for="petSpecies">Species:</label>
       <input type="text" id="petSpecies" />
     </div>
-
-    <!-- button to create pet -->
     <button type="button" id="createPetBtn">Create Pet</button>
   </form>
 
-  <!-- js files in the correct order -->
+  <!-- pet display container -->
+  <h2>All Pets</h2>
+  <div id="petsContainer"></div>
+
+   <!-- js files in the correct order -->
   <script src="petCreator.js"></script>
   <script src="pets.js"></script>
 </body>
