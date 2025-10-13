@@ -5,9 +5,26 @@ const state = {
   pets: []
 };
 
-// create puppy and log status
+// create puppy, log status and HTML
 const helloPet = createPet("Hello", 2, "puppy");
 helloPet.status(); 
+console.log(helloPet.html());
+
+// render all pets to webpage
+function renderPets() {
+  let allPetsHTML = "";
+
+  // loop through pets and HTML
+  state.pets.forEach(pet => {
+    const petHTML = pet.html();
+    allPetsHTML += petHTML;
+  });
+
+  console.log("All Pets HTML:", allPetsHTML);
+
+  // petsContainer with HTML
+  document.getElementById("petsContainer").innerHTML = allPetsHTML;
+}
 
 document.getElementById("createPetBtn").addEventListener("click", () => {
   // get the form values
@@ -25,7 +42,10 @@ document.getElementById("createPetBtn").addEventListener("click", () => {
 
   // new pet to global pets array and display
   state.pets.push(newPet);
-  newPet.status();
 
+  newPet.status();
   console.table(state.pets);
+
+  // render pets to the page
+  renderPets();
 });

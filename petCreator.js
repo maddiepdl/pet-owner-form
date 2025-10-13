@@ -36,6 +36,21 @@ function createPet(name, age, species) {
       } else {
         console.log(`${this.name} is too tired to play.`);
       }
+    },
+
+    // method for pet HTML
+    html() {
+      const petHTML = `
+        <div>
+          <h3>${this.name}</h3>
+          <p>Species: ${this.species}</p>
+          <p>Age: ${this.age}</p>
+          <p>Energy: ${this.energy}</p>
+          <p>Happiness: ${this.happiness}</p>
+        </div>
+      `;
+      console.log(`Generated HTML for ${this.name}:`, petHTML);
+      return petHTML;
     }
   };
 }
