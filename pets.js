@@ -1,15 +1,5 @@
 console.log("Hello from pets.js!");
 
-// global state object to store pets
-const state = {
-  pets: []
-};
-
-// create puppy, log status and HTML
-const helloPet = createPet("Hello", 2, "puppy");
-helloPet.status(); 
-console.log(helloPet.html());
-
 // render all pets to webpage
 function renderPets() {
   let allPetsHTML = "";
@@ -46,6 +36,8 @@ document.getElementById("createPetBtn").addEventListener("click", () => {
   newPet.status();
   console.table(state.pets);
 
-  // render pets to the page
+  savePets();
   renderPets();
 });
+
+renderPets();
